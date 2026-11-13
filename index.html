@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agente da loja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Barra Lateral (Sidebar) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-topo">
+        <button type="button" class="btn-icone" id="btn-fechar-sidebar" title="Fechar barra lateral" aria-label="Fechar barra lateral">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="3" x2="9" y2="21"></line>
+          </svg>
+        </button>
+
+        <button type="button" class="btn-novo-chat" id="btn-novo-chat" title="Novo chat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          <span>Novo chat</span>
+        </button>
+      </div>
+
+      <div class="sidebar-secao">
+        <span class="sidebar-titulo">Histórico / Rascunhos</span>
+        <ul class="lista-historico" id="lista-historico"></ul>
+      </div>
+
+      <div class="sidebar-rodape">
+        <div class="usuario-perfil">
+          <div class="usuario-avatar">3T</div>
+          <span>Aluno 3º Tec</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Área Principal -->
+    <div class="conteudo-principal">
+      <header class="topo">
+        <div class="topo-conteudo">
+          <button type="button" class="btn-icone oculto" id="btn-abrir-sidebar" title="Abrir barra lateral" aria-label="Abrir barra lateral">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+          </button>
+
+          <div class="seletor-wrapper">
+            <button type="button" class="modelo-badge" id="btn-modelo" aria-expanded="false">
+              <span>Agente da Loja</span>
+              <span class="seta" id="seta-modelo">▾</span>
+            </button>
+
+            <div class="menu-modelo" id="menu-modelo">
+              <div class="menu-item ativo">
+                <strong>Agente da Loja</strong>
+                <small>Consulta produtos, preços e estoque</small>
+              </div>
+              <div class="menu-item" id="btn-limpar-chat">
+                <strong>Nova conversa</strong>
+                <small>Iniciar um novo rascunho</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container-principal">
+        <div id="chat" aria-live="polite">
+          <div class="boas-vindas" id="boas-vindas">
+            <h2>Como posso ajudar hoje?</h2>
+          </div>
+        </div>
+      </main>
+
+      <footer class="rodape">
+        <form id="form">
+          <input 
+            id="pergunta" 
+            aria-label="Sua mensagem" 
+            placeholder="Envie uma mensagem para o Agente da loja..." 
+            autocomplete="off" 
+            required
+          >
+          <button id="enviar" type="submit" aria-label="Enviar mensagem" title="Enviar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+          </button>
+        </form>
+        <p class="aviso-rodape">O agente pode consultar ferramentas da loja para responder.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
